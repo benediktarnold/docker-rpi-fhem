@@ -6,8 +6,9 @@ RUN apt-get update && \
   echo 'Acquire::https::debian.fhem.de::Verify-Peer "false";' > /etc/apt/apt.conf.d/30nohttps && \
   wget --no-check-certificate -qO - https://debian.fhem.de/archive.key | apt-key add - && \
   apt-get update && \
-  apt-get install -y fhem libwww-perl libsoap-lite-perl libxml-parser-lite-perl libjson-perl
-#RUN cpan SOAP::Lite
+  apt-get install -y fhem libwww-perl libsoap-lite-perl libxml-parser-lite-perl libjson-perl curl make && \
+  curl -L http://cpanmin.us | perl - App::cpanminus
+RUN cpanm Net::MQTT::Simple::SSL Net::MQTT::Constants
 
 ADD fhem.cfg.template /opt/fhem/fhem.cfg.template
 ADD fhem-entrypoint.sh /fhem-entrypoint.sh
