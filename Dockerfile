@@ -8,7 +8,7 @@ RUN apt-get update && \
   apt-get update && \
   apt-get install -y fhem libwww-perl libsoap-lite-perl libxml-parser-lite-perl libjson-perl curl make && \
   curl -L http://cpanmin.us | perl - App::cpanminus
-RUN cpanm Net::MQTT::Simple::SSL Net::MQTT::Constants
+RUN cpanm Net::MQTT::Simple::SSL Net::MQTT::Constants Module::Pluggable
 
 ADD fhem.cfg.template /opt/fhem/fhem.cfg.template
 ADD fhem-entrypoint.sh /fhem-entrypoint.sh
