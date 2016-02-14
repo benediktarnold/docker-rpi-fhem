@@ -21,3 +21,5 @@ CMD /fhem-entrypoint.sh
 EXPOSE 8083 8084 8085 7072
 
 VOLUME ["/data"]
+
+ENV TERM=xterm
