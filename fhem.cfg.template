@@ -3,6 +3,7 @@ attr global modpath .
 attr global statefile /data/fhem.save
 attr global verbose 3
 attr global updateInBackground
+attr global uniqueID /data/uniqueID
 
 define telnetPort telnet 7072 global
 

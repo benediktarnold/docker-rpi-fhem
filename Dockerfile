@@ -1,7 +1,7 @@
 FROM resin/rpi-raspbian:jessie
 
 RUN apt-get update && \
-  apt-get install apt-transport-https wget && \
+  apt-get install -y apt-transport-https wget && \
   echo 'deb https://debian.fhem.de/stable ./' >> /etc/apt/sources.list && \
   echo 'Acquire::https::debian.fhem.de::Verify-Peer "false";' > /etc/apt/apt.conf.d/30nohttps && \
   wget --no-check-certificate -qO - https://debian.fhem.de/archive.key | apt-key add - && \
